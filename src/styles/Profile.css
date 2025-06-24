@@ -1,0 +1,207 @@
+/* Profile.css */
+
+/* Genel container */
+.profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text, #333);
+}
+
+/* Sayfa başlığı */
+.profile-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #000;
+  text-align: center;
+}
+
+/* Uyarı mesajları */
+.profile-alert {
+  margin-bottom: 16px;
+}
+
+/* Loading spinner ortalama */
+.profile-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+/* Profil formu kartı */
+.profile-card {
+  background: var(--color-bg, #fff);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Avatar grubu */
+.profile-avatar-group {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.profile-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--color-text, #333);
+}
+
+.profile-avatar-preview {
+      display: flex
+;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+}
+
+.profile-avatar-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
+.profile-avatar-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--color-border, #e0e0e0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+}
+
+.profile-avatar-icon {
+  font-size: 2rem;
+  color: var(--color-muted, #666);
+}
+
+/* Dosya input için ufak stil */
+.profile-file-input {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+/* Biyografi textarea */
+.profile-bio-group {
+  margin-bottom: 16px;
+}
+
+.profile-textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+/* Aksiyon butonları */
+.profile-actions {
+  text-align: center;
+}
+
+/* İstatistik kartı */
+.profile-stats-card {
+  background: var(--color-bg, #fff);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* İstatistik başlık */
+.stats-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #000;
+}
+
+/* İstatistik satırı */
+.stats-row {
+  margin: 0;
+}
+
+/* Her bir sütun */
+.stats-col {
+  padding: 8px;
+}
+
+/* Değer ve etiket */
+.stats-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+}
+
+.stats-label {
+  font-size: 0.9rem;
+  color: var(--color-muted, #666);
+  text-align: center;
+}
+
+/* Dark mode uyum (body.dark-mode varsa) */
+body.dark-mode .profile-container {
+  color: #eee;
+}
+
+body.dark-mode .profile-card,
+body.dark-mode .profile-stats-card {
+  background: #2a2a2a;
+  border-color: #444;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .profile-title,
+body.dark-mode .stats-title {
+  color: #fff;
+}
+
+body.dark-mode .profile-label,
+body.dark-mode .stats-label {
+  color: #ccc;
+}
+
+body.dark-mode .profile-avatar-placeholder {
+  background-color: #444;
+}
+
+body.dark-mode .profile-avatar-icon {
+  color: #aaa;
+}
+
+body.dark-mode .stats-value {
+  color: #fff;
+}
+
+/* Responsive ince ayarlar */
+@media (max-width: 576px) {
+  .profile-card,
+  .profile-stats-card {
+    padding: 16px;
+  }
+  .profile-avatar-img,
+  .profile-avatar-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+  .profile-avatar-icon {
+    font-size: 1.75rem;
+  }
+  .stats-value {
+    font-size: 1.25rem;
+  }
+  .stats-label {
+    font-size: 0.85rem;
+  }
+}

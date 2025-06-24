@@ -1,0 +1,15 @@
+/* src/components/RecommendationsRow.css */
+.recommendations-row::-webkit-scrollbar {
+  height: 6px;
+}
+.recommendations-row::-webkit-scrollbar-thumb {
+  background: #e0e4ec;
+  border-radius: 4px;
+}
+.rec-book-card {
+  transition: transform 0.14s cubic-bezier(.44,1.14,.63,.97), box-shadow 0.16s;
+}
+.rec-book-card:hover {
+  transform: translateY(-4px) scale(1.035);
+  box-shadow: 0 4px 16px #2a57f033;
+}

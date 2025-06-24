@@ -1,0 +1,166 @@
+/* Eğer projenizde global olarak Poppins import edildi ise; 
+   Ek olarak burada garanti etmek isterseniz: */
+.book-card {
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --color-primary: #f23026;
+  --color-secondary: #333;
+  --color-bg: #fff;
+  --color-text: #333;
+  --color-muted: #666;
+  --color-border: #e0e0e0;
+  --color-hover-bg: rgba(242,48,38,0.1);
+}
+body.dark-mode {
+  --color-bg: #2a2a2a;
+  --color-text: #eee;
+  --color-muted: #ccc;
+  --color-border: #444;
+  --color-hover-bg: rgba(255,255,255,0.1);
+}
+
+/* Genel card konteyner */
+.book-card {
+  background: var(--color-bg, #fff);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+/* Hover / odak efekti */
+.book-card:hover,
+.book-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header/görsel */
+.book-card-header {
+  width: 100%;
+  position: relative;
+  padding-top: 56.25%; /* 16:9 oranı. İsterseniz 4:3 için %75, kare için %100 yapabilirsiniz */
+  background: #f0f0f0;
+}
+.book-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.book-card-image.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted, #666);
+  font-size: 0.9rem;
+  background: #ddd;
+}
+
+/* Eğer image doğrudan <img> ise: */
+.book-card img.book-card-image {
+  width: 100%;
+  display: block;
+}
+
+/* Body */
+.book-card-body {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card-title {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.book-card-author {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  color: var(--color-muted, #666);
+}
+
+.book-card-date {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  color: var(--color-muted, #666);
+}
+
+.book-card-excerpt {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  color: var(--color-text, #333);
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+/* Footer / ikon butonlar */
+.book-card-footer {
+  padding: 8px 12px;
+  border-top: 1px solid var(--color-border, #e0e0e0);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--color-bg, #fff);
+}
+
+/* Ortak ikon buton stili */
+.btn-icon {
+  background: transparent;
+  border: none;
+  color: var(--color-muted, #666);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.btn-icon .icon-text {
+  font-size: 0.9rem;
+}
+
+.btn-icon:hover {
+  color: var(--color-primary, #f23026);
+}
+
+/* Beğeni butonu (liked durumunda farklı renk) */
+.like-btn {
+  /* Eğer isLiked state’e bağlı olarak farklı class eklemek isterseniz JS tarafında class ekleyin. */
+}
+.like-btn.liked,
+.btn-icon.liked {
+  color: var(--color-primary, #f23026);
+}
+
+/* Bookmark butonu durumuna göre: */
+.bookmark-btn.saved,
+.btn-icon.saved {
+  color: var(--color-primary, #f23026);
+}
+
+/* Responsive: mobilde biraz daha küçük font/icon */
+@media (max-width: 576px) {
+  .book-card-title {
+    font-size: 1.1rem;
+  }
+  .book-card-excerpt {
+    font-size: 0.9rem;
+  }
+  .btn-icon {
+    font-size: 0.9rem;
+  }
+}

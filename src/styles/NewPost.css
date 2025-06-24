@@ -1,0 +1,273 @@
+/* src/styles/NewPost.css */
+
+/* Renk değişkenleri (isteğe bağlı: bunları global olarak, örneğin :root içinde tanımlayın) */
+/*
+:root {
+  --color-text: #333;
+  --color-text-secondary: #666;
+  --color-primary: #007bff;
+  --color-border: #e0e0e0;
+  --color-bg: #fff;
+  --color-bg-alt: #f8f9fa;
+}
+body.dark-mode {
+  --color-text: #eee;
+  --color-text-secondary: #ccc;
+  --color-primary: #66b2ff;
+  --color-border: #444;
+  --color-bg: #2a2a2a;
+  --color-bg-alt: #333;
+}
+*/
+
+/* Genel container */
+.newpost-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text, #333);
+}
+
+/* Kart görünümü */
+.newpost-card {
+  background: var(--color-bg, #fff);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Başlık */
+.newpost-title {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-text, #000);
+}
+
+/* Uyarı mesajı */
+.newpost-alert {
+  margin-bottom: 16px;
+}
+
+/* Form grupları */
+.newpost-form-group {
+  margin-bottom: 20px;
+}
+
+/* Label */
+.newpost-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--color-text, #333);
+}
+
+/* Text / select input */
+.newpost-input,
+.newpost-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border, #ced4da);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s, background-color 0.2s;
+  background: var(--color-bg, #fff);
+  color: var(--color-text, #333);
+}
+
+.newpost-input:focus,
+.newpost-select:focus {
+  outline: none;
+  border-color: var(--color-primary, #000);
+  box-shadow: 0 0 0 2px rgba(242,48,38,0.2);
+  background: var(--color-bg, #fff);
+}
+
+/* Dosya input */
+.newpost-file-input {
+  display: block;
+  font-size: 0.9rem;
+}
+
+/* Resim preview */
+.newpost-preview-wrapper {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.newpost-preview-img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--color-border, #e0e0e0);
+}
+
+/* ProgressBar */
+.newpost-progress {
+  margin-top: 8px;
+  height: 20px;
+}
+
+/* Markdown editor wrapper */
+.newpost-mdeditor-wrapper {
+  border: 1px solid var(--color-border, #ced4da);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--color-bg, #fff);
+}
+
+/* İçerik editable alan (MDEditor textarea) */
+/* Eğer ek stil gerekiyorsa buraya ekleyin; örneğin dark-mode için: */
+body.dark-mode .newpost-mdeditor-wrapper {
+  border-color: #555;
+  background: #333;
+}
+
+/* Buton grubu */
+.newpost-actions {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.newpost-submit-btn {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: var(--color-primary, #000);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.newpost-submit-btn:hover:not(:disabled) {
+  /* Saf CSS ile koyulaştırma: */
+  background: #222;
+}
+
+.newpost-submit-btn:disabled {
+  background: var(--color-border, #ccc);
+  cursor: not-allowed;
+}
+
+/* Dark mode */
+body.dark-mode .newpost-card {
+  background: var(--color-bg, #2a2a2a);
+  border-color: var(--color-border, #444);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .newpost-title {
+  color: #fff;
+}
+
+body.dark-mode .newpost-label {
+  color: #ccc;
+}
+
+body.dark-mode .newpost-input,
+body.dark-mode .newpost-select {
+  background: #333;
+  color: #eee;
+  border-color: #555;
+}
+
+body.dark-mode .newpost-input:focus,
+body.dark-mode .newpost-select:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(242,48,38,0.2);
+}
+
+body.dark-mode .newpost-preview-img {
+  border-color: #555;
+}
+
+body.dark-mode .newpost-submit-btn {
+  background: #000;
+}
+
+body.dark-mode .newpost-submit-btn:hover:not(:disabled) {
+  background: #111;
+}
+
+/* Sayfa navigasyon butonları (card header içinde kullanıyorsanız) */
+.newpost-card .card-header {
+  background: var(--color-bg, #f7f7f7);
+  border-bottom: 1px solid var(--color-border, #e0e0e0);
+}
+body.dark-mode .newpost-card .card-header {
+  background: #333;
+  border-color: #555;
+}
+.newpost-card .card-header .btn {
+  margin-left: 4px;
+  margin-right: 4px;
+  font-size: 0.9rem;
+}
+
+/* Karakter eşiği metni */
+.newpost-form-group .text-danger {
+  font-weight: 500;
+}
+
+/* Responsive ince ayarlar */
+@media (max-width: 768px) {
+  .newpost-card {
+    padding: 16px;
+  }
+  .newpost-title {
+    font-size: 1.5rem;
+  }
+  .newpost-preview-img {
+    max-height: 150px;
+  }
+  .newpost-submit-btn {
+    font-size: 1rem;
+  }
+}
+
+/* Eğer container daha darsa */
+@media (max-width: 576px) {
+  .newpost-card {
+    padding: 12px;
+  }
+  .newpost-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Eğer form içinde sayfa düzenleme header/footer varsa ek stiller: */
+.page-navigation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.page-navigation-header .btn {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+/* Önizleme modal içeriği */
+.modal-body .flipbook-wrapper {
+  width: 100%;
+  perspective: 1000px;
+  overflow: auto;
+  padding: 1rem;
+  background: var(--color-bg-alt, #f8f9fa);
+}
+body.dark-mode .modal-body .flipbook-wrapper {
+  background: var(--color-bg-alt, #333);
+}
+
+/* Genel scrollbar gizleme veya stil ekleme isterseniz: */
+/* .newpost-container ::-webkit-scrollbar { height/width, etc. } */
+
+/* Not: darken() fonksiyonu SCSS/LESS içindi; saf CSS’de yerine sabit koyulaştırılmış renkler kullandım. */
+/* Eğer başka renklendirme gerekiyorsa --color-primary gibi değişkenleri ayarlayın. */
+

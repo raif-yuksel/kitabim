@@ -1,0 +1,35 @@
+/* src/components/BadgeCongratsModal.css */
+.badge-congrats-body {
+  text-align: center;
+  background: #fffdf7;
+}
+.badge-pop-anim {
+  width: 80px; height: 80px;
+  animation: badge-pop 0.8s cubic-bezier(.21,2.2,.51,1.1);
+}
+.badge-congrats-anim {
+  position: relative; display: inline-block;
+}
+.badge-firework {
+  position: absolute; left: 50%; top: 50%;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle,#fff38a40 0%, #ffecb340 100%);
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 0.8;
+  z-index: 0;
+  pointer-events: none;
+  animation: badge-firework 1.2s cubic-bezier(.2,.7,.41,1.2);
+}
+@keyframes badge-pop {
+  0% { transform: scale(0.1) rotate(-14deg);}
+  60% { transform: scale(1.25) rotate(10deg);}
+  100% { transform: scale(1) rotate(0);}
+}
+@keyframes badge-firework {
+  0% { opacity: 0.9; transform: scale(0.5);}
+  60% { opacity: 1; transform: scale(1.2);}
+  100% { opacity: 0; transform: scale(2);}
+}
+.badge-title { font-size: 1.2em; margin: 8px 0 4px; color: #111; font-weight: 600; }
+.badge-desc { font-size: 1em; color: #555; }

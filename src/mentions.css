@@ -1,0 +1,27 @@
+/* src/mentions.css */
+.mentions__control {
+    background: white;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+  .mentions__highlighter {
+    overflow: hidden;
+  }
+  .mentions__input {
+    margin: 0;
+  }
+  .mentions__suggestions {
+    list-style: none;
+    border: 1px solid #ccc;
+    background: white;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  .mentions__suggestions__item {
+    padding: 5px;
+  }
+  .mentions__suggestions__item--focused {
+    background: #eee;
+  }
+  

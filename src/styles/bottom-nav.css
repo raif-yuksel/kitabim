@@ -1,0 +1,96 @@
+/* src/components/bottom-nav.css */
+
+/* Sabit konumda, tüm genişlik, altta */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px; /* İhtiyaca göre 50-60px yapabilirsiniz */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* Yüksek z-index ile üstte kalmasını sağla */
+  z-index: 1000;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Light tema */
+.bottom-nav-light {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Dark tema */
+.bottom-nav-dark {
+  background-color: #222222;
+  color: #f0f0f0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Her bir buton/öğe */
+.bottom-nav-item {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem; /* ikon boyutu için */
+  color: inherit;
+  padding: 4px 0;
+  transition: background-color 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+/* Hover efekti */
+.bottom-nav-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Dark tema hover */
+.bottom-nav-dark .bottom-nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Aktif öğe */
+.bottom-nav-item.active {
+  color: #007bff; /* Bootstrap primary rengi; istersen tema rengine göre değiştir */
+}
+
+/* Dark temada aktif rengi örneği */
+.bottom-nav-dark .bottom-nav-item.active {
+  color: #66b2ff;
+}
+
+/* Label (isteğe bağlı: küçük yazı) */
+.bottom-nav-label {
+  font-size: 0.6rem;
+  margin-top: 2px;
+  display: none; /* ikonların altındaki metni gizli tutabilir, isterseniz göster */
+}
+
+/* Eğer label’ı göstermek isterseniz: */
+@media (min-width: 576px) {
+  /* Küçük ekranlarda gösterme, büyük ekranda sidebar veya üst navbar’da göster */
+  .bottom-nav-label {
+    display: none;
+  }
+}
+
+/* Alternatif: Uzun süre duruma göre label gösterimi */
+/* .bottom-nav-item.active .bottom-nav-label { display: block; } */
+
+/* İçerik container’da en alta boşluk bırakmak için global CSS’de: */
+/*
+.content-container {
+  padding-bottom: 56px;  // bottom-nav yüksekliğine eşit
+}
+@media (min-width: 768px) {
+  .content-container {
+    padding-bottom: 0;
+  }
+}
+*/

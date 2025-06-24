@@ -1,0 +1,236 @@
+/* AdminModeration.css */
+
+/* Container */
+.adminmod-container {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text, #333);
+}
+
+/* Başlık */
+.adminmod-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-primary, #f23026);
+  text-align: center;
+}
+
+/* Empty mesaj */
+.adminmod-empty {
+  text-align: center;
+  color: var(--color-muted, #666);
+  font-size: 1rem;
+  margin-top: 16px;
+}
+
+/* Kart */
+.admin-card {
+  background: var(--color-bg, #fff);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.admin-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.admin-card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Başlık ve badge */
+.admin-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.admin-card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  color: var(--color-text, #333);
+}
+
+.admin-badge {
+  font-size: 0.8rem;
+}
+
+/* Alt başlık (tarih/author) */
+.admin-card-subtitle {
+  font-size: 0.85rem;
+  color: var(--color-muted, #666);
+  margin-bottom: 12px;
+}
+
+/* Resim */
+.admin-card-img-wrapper {
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.admin-card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* İçerik önizleme */
+.admin-card-text {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  color: var(--color-text, #333);
+  margin-bottom: 12px;
+}
+
+/* Buton grubu */
+.admin-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+/* Buton stilleri (opsiyonel ek stiller) */
+.admin-btn-detail {
+  background: var(--color-secondary-light, #e7f1ff);
+  border-color: var(--color-secondary-light, #e7f1ff);
+  color: var(--color-primary, #007bff);
+  transition: background 0.2s;
+}
+.admin-btn-detail:hover {
+  background: var(--color-secondary, #d0e4ff);
+}
+
+.admin-btn-approve {
+  /* Varsayılan bootstrap success */
+}
+
+.admin-btn-reject {
+  /* Varsayılan bootstrap danger */
+}
+
+/* Modal custom */
+.adminmod-modal .modal-content {
+  background: var(--color-bg, #fff);
+  border-color: var(--color-border, #e0e0e0);
+}
+
+.modal-post-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-text, #333);
+}
+
+.modal-post-meta {
+  font-size: 0.85rem;
+  color: var(--color-muted, #666);
+}
+
+.modal-post-img-wrapper {
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.modal-post-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.modal-post-content {
+  white-space: pre-wrap; /* satırları koru */
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-text, #333);
+  background: var(--color-bg-alt, #f9f9f9);
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border, #e0e0e0);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.modal-post-tags .badge {
+  font-size: 0.85rem;
+}
+
+/* Loading spinner için */
+.adminmod-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+/* Dark mode uyum */
+body.dark-mode .adminmod-container {
+  color: #eee;
+}
+
+body.dark-mode .admin-card {
+  background: #2a2a2a;
+  border-color: #444;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .admin-card-title,
+body.dark-mode .modal-post-title {
+  color: #fff;
+}
+
+body.dark-mode .admin-card-subtitle,
+body.dark-mode .modal-post-meta {
+  color: #ccc;
+}
+
+body.dark-mode .admin-card-text,
+body.dark-mode .modal-post-content {
+  color: #eee;
+  background: #333;
+  border-color: #555;
+}
+
+body.dark-mode .adminmod-modal .modal-content {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+body.dark-mode .modal-post-img-wrapper {
+  border-color: #555;
+}
+
+body.dark-mode .modal-post-content::-webkit-scrollbar {
+  background: #333;
+}
+body.dark-mode .modal-post-content::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+/* Responsive ince ayarlar */
+@media (max-width: 576px) {
+  .admin-card-body {
+    padding: 12px;
+  }
+  .admin-card-title {
+    font-size: 1.1rem;
+  }
+  .modal-post-content {
+    max-height: 300px;
+  }
+  .modal-post-title {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,149 @@
+/* AdminDashboard.css */
+
+/* Genel container */
+.admin-dashboard-container {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text, #333);
+}
+
+/* Başlık */
+.dashboard-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-primary, #f23026);
+  margin-bottom: 24px;
+}
+
+/* Tarih aralığı form satırı */
+.admin-dashboard-container .form-label {
+  font-weight: 500;
+}
+
+/* Summary kartlar */
+.summary-cards {
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  background: var(--color-bg-alt, #f9f9f9);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card-value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-primary, #f23026);
+}
+
+.summary-card-label {
+  font-size: 1rem;
+  color: var(--color-muted, #666);
+  margin-top: 4px;
+}
+
+/* Dashboard kart stili */
+.dashboard-card {
+  background: var(--color-bg, #fff);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Kart başlığı ve buton grubu */
+.dashboard-card-header {
+  margin-bottom: 12px;
+}
+
+.dashboard-card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-text, #333);
+  margin: 0;
+}
+
+/* Grafik wrapper */
+.dashboard-chart-wrapper {
+  flex-grow: 1;
+  min-height: 250px;
+}
+
+/* PieChart wrapper */
+.pie-chart-wrapper {
+  /* gerekirse min-height veya aspect-ratio eklenebilir */
+}
+
+/* Loading spinner */
+.admin-dashboard-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+/* Export buton */
+.dashboard-card-header .btn {
+  font-size: 0.85rem;
+}
+
+/* Dark mode uyum */
+body.dark-mode .admin-dashboard-container {
+  color: #eee;
+}
+
+body.dark-mode .dashboard-title {
+  color: var(--color-primary, #f23026);
+}
+
+body.dark-mode .summary-card,
+body.dark-mode .dashboard-card {
+  background: #2a2a2a;
+  border-color: #444;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .summary-card-value,
+body.dark-mode .dashboard-card-title {
+  color: #fff;
+}
+
+body.dark-mode .summary-card-label {
+  color: #ccc;
+}
+
+body.dark-mode .dashboard-card-header .btn {
+  color: #eee;
+  border-color: #555;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .dashboard-card {
+    padding: 12px;
+  }
+  .dashboard-card-title {
+    font-size: 1.1rem;
+  }
+  .summary-card {
+    margin-bottom: 12px;
+  }
+}

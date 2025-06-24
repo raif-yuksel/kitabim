@@ -1,0 +1,431 @@
+/* src/styles/AuthorPage.css */
+
+/* Tema değişkenleri (eğer globalde tanımlı değilse burada örnek verebilirsiniz):
+:root {
+  --color-bg: #fff;
+  --color-bg-alt: #f8f9f9;
+  --color-text: #333;
+  --color-text-secondary: #666;
+  --color-primary: #007bff;
+  --color-border: #e0e0e0;
+  --color-card-bg: #fff;
+  --color-card-border: #e0e0e0;
+  --color-shadow: rgba(0,0,0,0.1);
+}
+body.dark-mode {
+  --color-bg: #222;
+  --color-bg-alt: #2a2a2a;
+  --color-text: #eee;
+  --color-text-secondary: #ccc;
+  --color-primary: #66b2ff;
+  --color-border: #444;
+  --color-card-bg: #2a2a2a;
+  --color-card-border: #444;
+  --color-shadow: rgba(0,0,0,0.5);
+}
+*/
+
+/* Genel container */
+.authorpage-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: var(--color-bg, #fff);
+  color: var(--color-text, #333);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Yazar header bölümü */
+.author-header {
+  text-align: center;
+  padding: 24px 16px;
+  background-color: var(--color-card-bg, #fff);
+  border: 1px solid var(--color-card-border, #e0e0e0);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--color-shadow, rgba(0,0,0,0.1));
+  margin-bottom: 24px;
+}
+
+.author-avatar-wrapper {
+  margin: 0 auto 12px;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.author-avatar {
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary, #007bff);
+}
+
+.author-avatar-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--color-border, #e0e0e0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--color-text-secondary, #666);
+  border: 2px solid var(--color-primary, #007bff);
+}
+
+.author-name {
+  font-size: 1.75rem;
+  margin: 8px 0;
+  color: var(--color-text, #333);
+}
+
+.author-bio {
+  font-size: 1rem;
+  color: var(--color-text-secondary, #666);
+  margin-bottom: 12px;
+  padding: 0 8px;
+}
+
+.author-follow-btn {
+  margin-top: 8px;
+}
+
+/* İstatistikler bölümü */
+.author-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: var(--color-card-bg, #fff);
+  border: 1px solid var(--color-card-border, #e0e0e0);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--color-shadow, rgba(0,0,0,0.1));
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.author-stats .stat-item {
+  flex: 1 1 100px;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-primary, #007bff);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary, #666);
+}
+
+/* Bölüm başlıkları */
+.section-title {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: var(--color-text, #333);
+}
+
+/* AuthorPage bölümleri */
+.author-section {
+  margin-bottom: 32px;
+}
+
+/* Loading and empty durumları */
+.section-loading,
+.authorpage-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.section-empty {
+  text-align: center;
+  color: var(--color-text-secondary, #666);
+  padding: 16px 0;
+}
+
+/* Onaylı Paylaşımlar Izgarası */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 576px) {
+  .posts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+}
+
+/* Takip Ettikleri Listesi */
+.following-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.following-item {
+  width: 80px;
+  text-align: center;
+}
+
+.following-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.following-avatar {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary, #007bff);
+  margin-bottom: 4px;
+}
+
+.following-avatar-placeholder {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-border, #e0e0e0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary, #666);
+  margin-bottom: 4px;
+}
+
+.following-name {
+  font-size: 0.85rem;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+/* BookCard kapsayıcısı: eğer BookCard’ın kendine ait genişlik vs. yoksa burada düzenleme gerekebilir.
+   Örneğin BookCard, .book-card sınıfı içeriyorsa, grid içinde uygun şekilde sığdıracak. */
+
+/* Dark mode */
+body.dark-mode .authorpage-container {
+  background-color: var(--color-bg, #222);
+  color: var(--color-text, #eee);
+}
+
+body.dark-mode .author-header,
+body.dark-mode .author-stats,
+body.dark-mode .author-section > .section-loading,
+body.dark-mode .badge-card{
+  background-color: var(--color-card-bg, #2a2a2a);
+  border-color: var(--color-card-border, #444);
+  box-shadow: 0 2px 4px var(--color-shadow, rgba(0,0,0,0.5));
+}
+body.dark-mode .badge-card:hover .badge-desc-popup span{
+  color: #111;
+}
+
+body.dark-mode .author-name,
+body.dark-mode .section-title,
+body.dark-mode .stat-value {
+  color: var(--color-text, #eee);
+}
+
+body.dark-mode .stat-label,
+body.dark-mode .author-bio,
+body.dark-mode .section-empty {
+  color: var(--color-text-secondary, #ccc);
+}
+
+body.dark-mode .following-avatar {
+  border-color: var(--color-primary, #66b2ff);
+}
+
+/* Responsive ince ayarlar */
+@media (max-width: 768px) {
+  .author-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+  .author-stats .stat-item {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .author-avatar-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+  .author-avatar,
+  .author-avatar-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+  .author-name {
+    font-size: 1.5rem;
+  }
+  .stat-value {
+    font-size: 1.25rem;
+  }
+}
+
+/* Eğer Button vb. renk uyumsuzluğu varsa, Bootstrap temanızda veya inline style’da override edebilirsiniz */
+/* Örneğin takip butonu için: */
+.author-follow-btn {
+  margin-top: 12px;
+}
+
+/* Ek not:
+   - BookCard bileşeniniz grid içinde düzgün görünmelidir. Gerekirse BookCard içinde width:100% veya responsive ayar yapın.
+   - Eğer BookCard kendi CSS sınıflarını kullanıyorsa, buradaki .posts-grid ile uyumlu olduğundan emin olun.
+   - Tema değişkenlerinizi globalde :root / body.dark-mode içinde tanımladıktan sonra, yukarıdaki var(--color-…) kullanımları otomatik uyum sağlar.
+   - Daha ileri estetik isterseniz hover efektleri, geçiş animasyonları, SVG ikon renk ayarları vb. ekleyebilirsiniz.
+*/
+
+/* Örnek: BookCard ın içindeki başlık taşıyorsa: */
+.posts-grid .book-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Eğer BookCard image üzerinde overlay gösterim vb. eklemek isterseniz, BookCard bileşenini güncelleyin. */
+/* styles/AuthorPage.css - Badge efektleri eklenmiş hali */
+
+.badges-list {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+.badge-card {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: #f6f7fa;
+  border-radius: 16px;
+  box-shadow: 0 1px 8px #0001;
+  padding: 12px 26px;
+  min-width: 220px;
+  margin-bottom: 8px;
+  position: relative;
+  overflow: visible;
+  cursor: pointer;
+  transition: transform .22s cubic-bezier(.56,.3,.56,1), box-shadow .22s;
+}
+.badge-card:hover {
+  transform: scale(1.07) rotate(-2deg);
+  box-shadow: 0 6px 28px #44ffe233, 0 0 0 2px #72edfc33;
+  z-index: 3;
+}
+
+.badge-icon-pop {
+  position: relative;
+  width: 64px; height: 64px;
+  margin-right: 6px;
+}
+.badge-icon {
+  border-radius: 50%;
+  background: #fff;
+  border: 2.5px solid #b1f5d2;
+  box-shadow: 0 2px 12px #70e9ff57, 0 0 24px #caffc22e inset;
+  padding: 6px;
+  position: relative;
+  z-index: 2;
+  animation: badge-bounce 2s infinite cubic-bezier(.65,.05,.36,1);
+}
+
+@keyframes badge-bounce {
+  0%, 100% { transform: translateY(0) scale(1);}
+  35%     { transform: translateY(-7px) scale(1.06);}
+  70%     { transform: translateY(0) scale(1);}
+}
+
+.badge-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px; height: 80px;
+  background: radial-gradient(circle, #90f3ff55 0%, #fff0 70%);
+  border-radius: 50%;
+  z-index: 1;
+  filter: blur(2px);
+  pointer-events: none;
+  animation: badge-glow-anim 2.5s infinite linear;
+}
+@keyframes badge-glow-anim {
+  0%, 100% { opacity: .75; }
+  50% { opacity: 1; box-shadow: 0 0 40px 16px #0fd; }
+}
+
+.badge-title {
+  font-weight: 700;
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+.badge-desc-popup {
+  position: relative;
+  font-size: 0.95rem;
+  color: #222b;
+  cursor: help;
+  min-width: 140px;
+  margin-top: 3px;
+}
+.badge-desc-popup .badge-desc-text {
+  transition: opacity .2s;
+  opacity: .88;
+}
+.badge-desc-popup .badge-date {
+  display: block;
+  font-size: 0.81em;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* Tooltip animasyonu: hoverda açıklama "kartı" çıkıyor */
+.badge-card:hover .badge-desc-popup {
+  font-size: 1rem;
+  color: #067;
+  background: #eafffb;
+  box-shadow: 0 4px 18px #c3fff955;
+  border-radius: 7px;
+  padding: 9px 13px;
+  position: absolute;
+  left: 96px;
+  top: 50%;
+  min-width: 180px;
+  z-index: 9;
+  transform: translateY(-50%);
+  opacity: 1;
+  pointer-events: auto;
+  animation: badge-desc-fade .18s cubic-bezier(.7,1.5,.4,1.5);
+}
+
+@keyframes badge-desc-fade {
+  0% { opacity: 0; transform: translateY(-30%) scale(.93);}
+  100% { opacity: 1; transform: translateY(-50%) scale(1);}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .badges-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .badge-card {
+    min-width: 0;
+    width: 95vw;
+    padding: 12px 10px;
+  }
+  .badge-desc-popup {
+    left: 80px;
+    min-width: 120px;
+  }
+}

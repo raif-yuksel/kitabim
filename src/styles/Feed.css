@@ -1,0 +1,142 @@
+/* === Feed Filter Modern Bar === */
+
+.feed-filterbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 24px 0 32px 0;
+  background: var(--color-bg-alt, #f6f7fa);
+  border-radius: 15px;
+  padding: 18px 22px;
+  box-shadow: 0 2px 20px 0 #8eb5fa11;
+  border: 1.3px solid #e3e6ee;
+  position: relative;
+}
+
+/* Arama inputu */
+.feed-filterbar .form-control,
+.feed-filterbar .form-select {
+  border-radius: 8px !important;
+  border: 1.5px solid #c6d2e0 !important;
+  background: #f9fafb;
+  color: #2257a1;
+  font-size: 1.06rem;
+  transition: border 0.13s, box-shadow 0.13s;
+}
+.feed-filterbar .form-control:focus,
+.feed-filterbar .form-select:focus {
+  border-color: #3574e9 !important;
+  box-shadow: 0 0 0 2px #3574e933;
+  background: #f5faff;
+  color: #1753b5;
+}
+
+/* Butonlar */
+.feed-filterbar .btn,
+.feed-filterbar .btn-secondary {
+  background: #e8f1fd;
+  color: #2760c7;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 7px 18px;
+  transition: background 0.13s, color 0.13s, box-shadow 0.13s;
+  box-shadow: 0 2px 7px #b5d8fa22;
+}
+.feed-filterbar .btn:hover,
+.feed-filterbar .btn:focus {
+  background: #3574e9;
+  color: #fff;
+  box-shadow: 0 4px 16px #6495ed44;
+}
+.feed-filterbar .animated-btn {
+  background: linear-gradient(90deg, #3574e9 70%, #7cc6f3 100%);
+  color: #fff;
+  font-weight: 700;
+  padding: 7px 18px;
+  margin-left: 12px;
+  border-radius: 9px;
+  box-shadow: 0 2px 8px #6495ed33;
+  font-size: 1.09rem;
+}
+.feed-filterbar .animated-btn:hover {
+  background: linear-gradient(90deg, #2262c5 90%, #b8e2fc 100%);
+  color: #fff;
+}
+
+/* Etiket (select) farklı olsun */
+.feed-filterbar .input-group-text {
+  background: #f3f6fa;
+  border: none;
+  color: #3574e9;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .feed-filterbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px 7px;
+  }
+  .feed-filterbar .animated-btn {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}
+
+/* Dark Mode */
+body.dark-mode .feed-filterbar {
+  background: #232937;
+  border-color: #29314a;
+  box-shadow: 0 2px 16px 0 #16224833;
+}
+body.dark-mode .feed-filterbar .form-control,
+body.dark-mode .feed-filterbar .form-select {
+  background: #212a36;
+  color: #c0deff;
+  border-color: #2b3a4a !important;
+}
+body.dark-mode .feed-filterbar .form-control:focus,
+body.dark-mode .feed-filterbar .form-select:focus {
+  border-color: #64b3f4 !important;
+  background: #222f40;
+  color: #82b9f7;
+}
+body.dark-mode .feed-filterbar .btn,
+body.dark-mode .feed-filterbar .btn-secondary {
+  background: #273656;
+  color: #64b3f4;
+}
+body.dark-mode .feed-filterbar .btn:hover,
+body.dark-mode .feed-filterbar .btn:focus {
+  background: #64b3f4;
+  color: #222f40;
+}
+body.dark-mode .feed-filterbar .animated-btn {
+  background: linear-gradient(90deg, #3858a1 70%, #64b3f4 100%);
+  color: #fff;
+}
+body.dark-mode .feed-filterbar .animated-btn:hover {
+  background: linear-gradient(90deg, #23345a 90%, #64b3f4 100%);
+  color: #fff;
+}
+body.dark-mode .feed-filterbar .input-group-text {
+  background: #23345a;
+  color: #64b3f4;
+}
+
+/* Mobilde collapse içi padding/stil */
+@media (max-width: 600px) {
+  .feed-filterbar {
+    padding: 9px 3px;
+  }
+}
+
+/* Küçük badge, ikon vb. için: */
+.feed-filterbar .input-group-text svg {
+  vertical-align: middle;
+  font-size: 1.08em;
+}
